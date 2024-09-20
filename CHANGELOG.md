@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### changed
 - **scripts** start_functions.R can now handle clusters per region flexibly
+- **15_food** revision of MP/SCP implementation for milk and meat alternatives. Added demand for fat and sugar as ingredients for MP-based milk alternatives. Added optional demand for fat as ingredient for MP-based meat alternatives.
 - **41_area_equipped_for_irrigation** new AEI data (Mehta2022) replacing old Siebert data
 
 ### added
