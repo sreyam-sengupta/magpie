@@ -39,3 +39,7 @@ gamslice.txt
 
 /renv.lock
 .Rproj.user
+
+#ignore patch input files
+/patch_input/
+*.tgz
