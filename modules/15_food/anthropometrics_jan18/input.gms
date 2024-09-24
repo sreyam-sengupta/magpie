@@ -100,8 +100,6 @@ scalar s15_kcal_pc_livestock_intake_target target for livestock intake (kcal per
 
 scalar s15_livescen_target_subst fade-out of livestock products (0) or substitution of livestock products with plant-based products (1) / 1 /;
 
-scalar s15_scp_supplement_fat_meat    Switch for supplemental fat needed as ingredient for scp-based meat alternatives (1) / 0 /;
-
 table f15_household_balanceflow(t_all,i,kall,dm_ge_nr)   Balance flow to take account of heterogeneous products and processes (mio. tDM)
 $ondelim
 $include "./modules/15_food/input/f15_household_balanceflow.cs3"
