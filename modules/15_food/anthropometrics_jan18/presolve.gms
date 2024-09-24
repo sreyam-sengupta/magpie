@@ -436,7 +436,7 @@ p15_kcal_pc_calibrated(t,i,kfo_pp) = p15_plant_kcal_structure_orig(t,i,kfo_pp)
 *' back to kcal/cap/day using i15_protein_to_kcal_ratio(t,"scp").
 *'
 *' Protein to kcal ratio:
-i15_protein_to_kcal_ratio(t,kfo) = fm_nutrition_attributes(t,kfo,"protein") / fm_nutrition_attributes(t,kfo,"kcal");
+i15_protein_to_kcal_ratio(t,kfo) = f15_nutrition_attributes(t,kfo,"protein") / f15_nutrition_attributes(t,kfo,"kcal");
 *'
 *' Increase of single-cell protein (SCP):
 p15_protein_pc_scp(t,i,kfo_rd) = p15_kcal_pc_calibrated(t,i,kfo_rd) * (1-i15_rumdairy_scp_fadeout(t,i)) * i15_protein_to_kcal_ratio(t,kfo_rd);
@@ -453,11 +453,11 @@ p15_kcal_pc_calibrated(t,i,kfo_rd) = p15_kcal_pc_calibrated(t,i,kfo_rd) * i15_ru
 *'
 p15_kcal_pc_calibrated(t,i,"oils") = p15_kcal_pc_calibrated(t,i,"oils") 
    + sum(kfo_rd$sameas(kfo_rd,"livst_milk"), p15_protein_pc_scp(t,i,kfo_rd)) / 
-     s15_scp_protein_per_milk * s15_scp_fat_per_milk * fm_nutrition_attributes(t,"oils", "kcal");
+     s15_scp_protein_per_milk * s15_scp_fat_per_milk * f15_nutrition_attributes(t,"oils", "kcal");
 *'
 p15_kcal_pc_calibrated(t,i,"sugar") = p15_kcal_pc_calibrated(t,i,"sugar") 
    + sum(kfo_rd$sameas(kfo_rd,"livst_milk"), p15_protein_pc_scp(t,i,kfo_rd)) / 
-     s15_scp_protein_per_milk * s15_scp_sugar_per_milk * fm_nutrition_attributes(t, "sugar" ,"kcal");
+     s15_scp_protein_per_milk * s15_scp_sugar_per_milk * f15_nutrition_attributes(t, "sugar" ,"kcal");
 *' 
 *' The ratio of fat to protein in raw microbial biomass (used as single cell protein) is much lower than for 
 *' plant based meat alternatives and animal based meat products. If the desired microbial product is alternative meat, 
@@ -480,8 +480,8 @@ p15_kcal_pc_calibrated(t,i,"sugar") = p15_kcal_pc_calibrated(t,i,"sugar")
 *' 
 p15_kcal_pc_calibrated(t,i,"oils")$(s15_scp_supplement_fat_meat = 1) = p15_kcal_pc_calibrated(t,i,"oils") 
    + sum(kfo_rd$sameas(kfo_rd,"livst_rum"), p15_protein_pc_scp(t,i,kfo_rd)) / 
-     fm_nutrition_attributes(t,"scp", "protein") * (fm_nutrition_attributes(t,"scp", "protein") * 
-     s15_scp_fat_protein_ratio_meat - s15_scp_fat_content) * fm_nutrition_attributes(t,"oils", "kcal");
+     f15_nutrition_attributes(t,"scp", "protein") * (f15_nutrition_attributes(t,"scp", "protein") * 
+     s15_scp_fat_protein_ratio_meat - s15_scp_fat_content) * f15_nutrition_attributes(t,"oils", "kcal");
 *' 
 *' @stop
 

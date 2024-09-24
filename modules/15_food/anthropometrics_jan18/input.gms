@@ -71,7 +71,7 @@ sets
 ;
 
 $onMultiR
-set    kfo_rd(kfo) Ruminant meat and dairy food products / livst_rum /;
+set    kfo_rd(kfo) Ruminant meat and dairy food products / livst_rum,livst_milk /;
 $offMulti
 
 scalar s15_elastic_demand  Elastic demand switch (1=elastic 0=exogenous) (1) / 0 /;
@@ -111,7 +111,6 @@ table f15_nutrition_attributes(t_all,kall,nutrition) Nutrition attributes of foo
 $ondelim
 $include "./modules/15_food/input/f15_nutrition_attributes.cs3"
 $offdelim;
-
 
 *** Food Demand Model
 
