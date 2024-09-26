@@ -25,7 +25,7 @@ source("config/mp_default.cfg") #nolinter
 cfg$force_replace <- FALSE
 cfg$qos <- "priority"
 
-identifierFlag <- "SCP_23-11-27"
+identifierFlag <- "SCP_2024-09-25"
 
 cfg$info$flag <- identifierFlag
 cfg$results_folder <- paste0("output/", identifierFlag, "/:title:")

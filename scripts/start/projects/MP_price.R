@@ -29,7 +29,7 @@ cfg$qos <- "priority"
 
 ### Identifier and folder
 ###############################################
-identifierFlag <- "SCP_23-11-27"
+identifierFlag <- "SCP_2024-09-25"
 ###############################################
 cfg$info$flag <- identifierFlag
 cfg$results_folder <- paste0("output/", identifierFlag, "/:title:")
@@ -47,7 +47,7 @@ cfg$gms$tc <- "exo"
 blV <- c(0, 0.7, 0.74, 0.78) #BII lower bound (0-1), default 0
 
 ### Food
-mpV <- c(0, 30, 50, 76)
+mpV <- c(0, 25, 50, 75)
 
 
 for (bl in blV) {

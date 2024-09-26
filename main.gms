@@ -149,23 +149,23 @@ $title magpie
 *##################### R SECTION START (VERSION INFO) ##########################
 * 
 * Used data set: rev4.87_26df900e_magpie.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
+* md5sum: 26af5fee95378b827e5e4a052447dcb7
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
 * Used data set: rev4.87_26df900e_fd712c0b_cellularmagpie_c200_MRI-ESM2-0-ssp370_lpjml-8e6c5eb1.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
+* md5sum: aa954af24378583c512514ba640039ef
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
 * Used data set: rev4.87_26df900e_validation.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
+* md5sum: a6f60d8aff0dff3a8ad01e9387be5e51
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
 * Used data set: additional_data_rev4.43.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
+* md5sum: 7f537e5df805af11f0e67e84e6010290
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
 * Used data set: MMEmuR12_rev4.87.tgz
-* md5sum: c4b6326b860ae728c2e5b07dbdda9057
+* md5sum: 54de75fb130cfa6542f120e42b540484
 * Repository: ./patch_input
 * 
 * Low resolution: c200
@@ -195,7 +195,7 @@ $title magpie
 * * Call: withCallingHandlers(expr, message = messageHandler, warning = warningHandler,     error = errorHandler)
 * 
 * 
-* Last modification (input data): Fri Sep 20 15:11:40 2024
+* Last modification (input data): Thu Sep 26 09:59:49 2024
 * 
 *###################### R SECTION END (VERSION INFO) ###########################
 
@@ -221,7 +221,7 @@ $offlisting
 
 $setglobal c_timesteps  coup2110
 $setglobal c_past  till_2010
-$setglobal c_title  default-MMR12
+$setglobal c_title  MP75BI70E25G0000price
 
 scalars
 s_use_gdx   use of gdx files                                       / 0 /
@@ -234,7 +234,7 @@ $setglobal drivers  aug17
 $setglobal land  landmatrix_dec18
 $setglobal costs  default
 $setglobal interest_rate  select_apr20
-$setglobal tc  endo_jan22
+$setglobal tc  exo
 $setglobal yields  managementcalib_aug19
 
 $setglobal food  anthropometrics_jan18
