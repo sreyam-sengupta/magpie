@@ -25,7 +25,7 @@ source("scripts/start_functions.R") #nolinter
 source("config/mp_default.cfg") #nolinter
 
 cfg$force_replace <- TRUE
-cfg$qos <- "standby"
+cfg$qos <- "priority"
 
 ### Identifier and folder
 ###############################################
@@ -47,7 +47,7 @@ gV <- c(0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000)
 blV <- c(0, 0.7, 0.74, 0.78) #BII lower bound (0-1), default 0
 
 ### Food
-pV <- c(0, 25, 50, 75) #0, 20, 50, 76
+mpV <- c(0, 25, 50, 75) #0, 20, 50, 76
 
 ### Forest
 cfg$gms$ s32_max_aff_cell_2025 <- 0.005

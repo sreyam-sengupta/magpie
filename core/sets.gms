@@ -15,99 +15,100 @@
 sets
 
   h all superregional economic regions
-    / AFR, CHA, CPA, EEU, FSU, LAM, MEA, NAM, PAO, PAS, SAS, WEU /
+    / CAZ, CHA, EUR, IND, JPN, LAM, MEA, NEU, OAS, REF, SSA, USA /
 
   i all economic regions
-    / AFR, CHA, CPA, EEU, FSU, LAM, MEA, NAM, PAO, PAS, SAS, WEU /
+    / CAZ, CHA, EUR, IND, JPN, LAM, MEA, NEU, OAS, REF, SSA, USA /
 
   supreg(h,i) mapping of superregions to its regions
-    / AFR . (AFR)
+    / CAZ . (CAZ)
       CHA . (CHA)
-      CPA . (CPA)
-      EEU . (EEU)
-      FSU . (FSU)
+      EUR . (EUR)
+      IND . (IND)
+      JPN . (JPN)
       LAM . (LAM)
       MEA . (MEA)
-      NAM . (NAM)
-      PAO . (PAO)
-      PAS . (PAS)
-      SAS . (SAS)
-      WEU . (WEU) /
+      NEU . (NEU)
+      OAS . (OAS)
+      REF . (REF)
+      SSA . (SSA)
+      USA . (USA) /
 
   iso list of iso countries
-    / AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI, ERI,
-      ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI, MOZ, MRT,
-      MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN, SHN, SLE, SOM, SSD,
-      STP, SWZ, SYC, TCD, TGO, TZA, UGA, ZAF, ZMB, ZWE, CHN, HKG, KHM, LAO,
-      MAC, MNG, PRK, VNM, ALB, BGR, BIH, CZE, EST, HRV, HUN, LTU, LVA, MKD,
-      MNE, POL, ROU, SRB, SVK, SVN, ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS,
-      TJK, TKM, UKR, UZB, ABW, AIA, ARG, ATA, ATG, BES, BHS, BLM, BLZ, BMU,
-      BOL, BRA, BRB, BVT, CHL, COL, CRI, CUB, CUW, CYM, DMA, DOM, ECU, FLK,
-      GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ,
-      NIC, PAN, PER, PRY, SGS, SLV, SUR, SXM, TCA, TTO, URY, VCT, VEN, VGB,
-      VIR, ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
-      OMN, PSE, QAT, SAU, SYR, TUN, YEM, CAN, GUM, PRI, SPM, USA, AUS, HMD,
-      JPN, NZL, ASM, ATF, BRN, CCK, COK, CXR, FJI, FSM, IDN, IOT, KIR, KOR,
-      MHL, MMR, MNP, MYS, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PYF, SGP,
-      SLB, THA, TKL, TLS, TON, TUV, TWN, UMI, VUT, WLF, WSM, AFG, BGD, BTN,
-      IND, LKA, MDV, NPL, PAK, ALA, AND, AUT, BEL, CHE, CYP, DEU, DNK, ESP,
-      FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, IMN, IRL, ISL, ITA, JEY, LIE,
-      LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, TUR, VAT /
+    / ABW, AFG, AGO, AIA, ALA, ALB, AND, ARE, ARG, ARM, ASM, ATA, ATF, ATG,
+      AUS, AUT, AZE, BDI, BEL, BEN, BES, BFA, BGD, BGR, BHR, BHS, BIH, BLM,
+      BLR, BLZ, BMU, BOL, BRA, BRB, BRN, BTN, BVT, BWA, CAF, CAN, CCK, CHN,
+      CHE, CHL, CIV, CMR, COD, COG, COK, COL, COM, CPV, CRI, CUB, CUW, CXR,
+      CYM, CYP, CZE, DEU, DJI, DMA, DNK, DOM, DZA, ECU, EGY, ERI, ESH, ESP,
+      EST, ETH, FIN, FJI, FLK, FRA, FRO, FSM, GAB, GBR, GEO, GGY, GHA, GIB,
+      GIN, GLP, GMB, GNB, GNQ, GRC, GRD, GRL, GTM, GUF, GUM, GUY, HKG, HMD,
+      HND, HRV, HTI, HUN, IDN, IMN, IND, IOT, IRL, IRN, IRQ, ISL, ISR, ITA,
+      JAM, JEY, JOR, JPN, KAZ, KEN, KGZ, KHM, KIR, KNA, KOR, KWT, LAO, LBN,
+      LBR, LBY, LCA, LIE, LKA, LSO, LTU, LUX, LVA, MAC, MAF, MAR, MCO, MDA,
+      MDG, MDV, MEX, MHL, MKD, MLI, MLT, MMR, MNE, MNG, MNP, MOZ, MRT, MSR,
+      MTQ, MUS, MWI, MYS, MYT, NAM, NCL, NER, NFK, NGA, NIC, NIU, NLD, NOR,
+      NPL, NRU, NZL, OMN, PAK, PAN, PCN, PER, PHL, PLW, PNG, POL, PRI, PRK,
+      PRT, PRY, PSE, PYF, QAT, REU, ROU, RUS, RWA, SAU, SDN, SEN, SGP, SGS,
+      SHN, SJM, SLB, SLE, SLV, SMR, SOM, SPM, SRB, SSD, STP, SUR, SVK, SVN,
+      SWE, SWZ, SXM, SYC, SYR, TCA, TCD, TGO, THA, TJK, TKL, TKM, TLS, TON,
+      TTO, TUN, TUR, TUV, TWN, TZA, UGA, UKR, UMI, URY, USA, UZB, VAT, VCT,
+      VEN, VGB, VIR, VNM, VUT, WLF, WSM, YEM, ZAF, ZMB, ZWE /
 
   j number of LPJ cells
-    / AFR_1*AFR_39,
-      CHA_40*CHA_57,
-      CPA_58*CPA_59,
-      EEU_60*EEU_60,
-      FSU_61*FSU_73,
-      LAM_74*LAM_118,
-      MEA_119*MEA_142,
-      NAM_143*NAM_166,
-      PAO_167*PAO_171,
-      PAS_172*PAS_175,
-      SAS_176*SAS_187,
-      WEU_188*WEU_200 /
+    / CAZ_1*CAZ_6,
+      CHA_7*CHA_23,
+      EUR_24*EUR_32,
+      IND_33*IND_40,
+      JPN_41*JPN_41,
+      LAM_42*LAM_85,
+      MEA_86*MEA_111,
+      NEU_112*NEU_118,
+      OAS_119*OAS_128,
+      REF_129*REF_141,
+      SSA_142*SSA_179,
+      USA_180*USA_200 /
 
   cell(i,j) number of LPJ cells per region i
-    / AFR . (AFR_1*AFR_39)
-      CHA . (CHA_40*CHA_57)
-      CPA . (CPA_58*CPA_59)
-      EEU . (EEU_60*EEU_60)
-      FSU . (FSU_61*FSU_73)
-      LAM . (LAM_74*LAM_118)
-      MEA . (MEA_119*MEA_142)
-      NAM . (NAM_143*NAM_166)
-      PAO . (PAO_167*PAO_171)
-      PAS . (PAS_172*PAS_175)
-      SAS . (SAS_176*SAS_187)
-      WEU . (WEU_188*WEU_200) /
+    / CAZ . (CAZ_1*CAZ_6)
+      CHA . (CHA_7*CHA_23)
+      EUR . (EUR_24*EUR_32)
+      IND . (IND_33*IND_40)
+      JPN . (JPN_41*JPN_41)
+      LAM . (LAM_42*LAM_85)
+      MEA . (MEA_86*MEA_111)
+      NEU . (NEU_112*NEU_118)
+      OAS . (OAS_119*OAS_128)
+      REF . (REF_129*REF_141)
+      SSA . (SSA_142*SSA_179)
+      USA . (USA_180*USA_200) /
 
   i_to_iso(i,iso) mapping regions to iso countries
-    / AFR . (AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI)
-      AFR . (ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI)
-      AFR . (MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN, SHN)
-      AFR . (SLE, SOM, SSD, STP, SWZ, SYC, TCD, TGO, TZA, UGA, ZAF, ZMB, ZWE)
-      CHA . (CHN, HKG)
-      CPA . (KHM, LAO, MAC, MNG, PRK, VNM)
-      EEU . (ALB, BGR, BIH, CZE, EST, HRV, HUN, LTU, LVA, MKD, MNE, POL, ROU)
-      EEU . (SRB, SVK, SVN)
-      FSU . (ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB)
+    / CAZ . (AUS, CAN, HMD, NZL, SPM)
+      CHA . (CHN, HKG, MAC, TWN)
+      EUR . (ALA, AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, FRO)
+      EUR . (GBR, GGY, GIB, GRC, HRV, HUN, IMN, IRL, ITA, JEY, LTU, LUX, LVA)
+      EUR . (MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE)
+      IND . (IND)
+      JPN . (JPN)
       LAM . (ABW, AIA, ARG, ATA, ATG, BES, BHS, BLM, BLZ, BMU, BOL, BRA, BRB)
       LAM . (BVT, CHL, COL, CRI, CUB, CUW, CYM, DMA, DOM, ECU, FLK, GLP, GRD)
       LAM . (GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC)
-      LAM . (PAN, PER, PRY, SGS, SLV, SUR, SXM, TCA, TTO, URY, VCT, VEN, VGB)
-      LAM . (VIR)
+      LAM . (PAN, PER, PRI, PRY, SGS, SLV, SUR, SXM, TCA, TTO, URY, VCT, VEN)
+      LAM . (VGB, VIR)
       MEA . (ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR)
-      MEA . (OMN, PSE, QAT, SAU, SYR, TUN, YEM)
-      NAM . (CAN, GUM, PRI, SPM, USA)
-      PAO . (AUS, HMD, JPN, NZL)
-      PAS . (ASM, ATF, BRN, CCK, COK, CXR, FJI, FSM, IDN, IOT, KIR, KOR, MHL)
-      PAS . (MMR, MNP, MYS, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PYF, SGP)
-      PAS . (SLB, THA, TKL, TLS, TON, TUV, TWN, UMI, VUT, WLF, WSM)
-      SAS . (AFG, BGD, BTN, IND, LKA, MDV, NPL, PAK)
-      WEU . (ALA, AND, AUT, BEL, CHE, CYP, DEU, DNK, ESP, FIN, FRA, FRO, GBR)
-      WEU . (GGY, GIB, GRC, GRL, IMN, IRL, ISL, ITA, JEY, LIE, LUX, MCO, MLT)
-      WEU . (NLD, NOR, PRT, SJM, SMR, SWE, TUR, VAT) /
+      MEA . (OMN, PSE, QAT, SAU, SDN, SYR, TUN, YEM)
+      NEU . (ALB, AND, BIH, CHE, GRL, ISL, LIE, MCO, MKD, MNE, NOR, SJM, SMR)
+      NEU . (SRB, TUR, VAT)
+      OAS . (AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, IDN)
+      OAS . (IOT, KHM, KIR, KOR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL)
+      OAS . (NFK, NIU, NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB)
+      OAS . (THA, TKL, TLS, TON, TUV, UMI, VNM, VUT, WLF, WSM)
+      REF . (ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB)
+      SSA . (AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI)
+      SSA . (ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI)
+      SSA . (MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SEN, SHN, SLE)
+      SSA . (SOM, SSD, STP, SWZ, SYC, TCD, TGO, TZA, UGA, ZAF, ZMB, ZWE)
+      USA . (USA) /
 
 ;
 *######################### R SECTION END (SETS) ################################

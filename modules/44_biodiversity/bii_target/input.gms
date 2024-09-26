@@ -6,7 +6,7 @@
 *** |  Contact: magpie@pik-potsdam.de
 
 scalars 
- s44_bii_lower_bound      Lower bound for BII (1)                     / 0.7 /
+ s44_bii_lower_bound      Lower bound for BII (1)                     / 0.78 /
  c44_bii_decrease       Implementation of lower bound for BII (binary)          / 0 /
  s44_target_year        Year in which the BII lower bound is reached  (1)       / 2100 /
  s44_start_year         Start year for interpolation towards BII lower bound (1)    / 2025 /
