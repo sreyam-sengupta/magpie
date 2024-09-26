@@ -11,7 +11,7 @@ scalars
   s31_cost_grass_prod  Grasslands factor costs (USD05MER per tDM)                 / 1 /
 ;
 
-$setglobal c31_grassl_yld_scenario  cc
+$setglobal c31_grassl_yld_scenario  nocc_hist
 *   options:  cc        (climate change)
 *             nocc      (no climate change)
 *             nocc_hist (no climate change after year defined by sm_fix_cc)

@@ -5,7 +5,7 @@
 *** |  MAgPIE License Exception, version 1.0 (see LICENSE file).
 *** |  Contact: magpie@pik-potsdam.de
 
-$setglobal c14_yields_scenario  cc
+$setglobal c14_yields_scenario  nocc_hist
 *   options:  cc        (climate change)
 *             nocc      (no climate change)
 *             nocc_hist (no climate change after year defined by sm_fix_cc)
@@ -16,7 +16,7 @@ scalar s14_calib_ir2rf   Switch to calibrate rainfed to irrigated yield ratios (
 
 scalar s14_degradation   Switch to include yield impacts of land degradation(0=no degradation 1=with degradation) / 0 /;
 
-scalar s14_use_yield_calib  Switch for using or not using yield calibration factors from the preprocessing (1=use facs 0=not use facs) / 0 /;
+scalar s14_use_yield_calib  Switch for using or not using yield calibration factors from the preprocessing (1=use facs 0=not use facs) / 1 /;
 
 scalar s14_minimum_wood_yield Minimum wood yield for timber harvest in natural vegetation (tDM per ha per yr) / 10 /;
 

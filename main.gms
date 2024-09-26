@@ -148,26 +148,29 @@ $title magpie
 
 *##################### R SECTION START (VERSION INFO) ##########################
 * 
-* Used data set: rev4.109_h12_magpie.tgz
-* md5sum: NA
-* Repository: scp://cluster.pik-potsdam.de/p/projects/rd3mod/inputdata/output
+* Used data set: rev4.111_h12_magpie.tgz
+* md5sum: 86aeb835e1ee5c2f839ab28a1b69fd63
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
-* Used data set: rev4.109_h12_fd712c0b_cellularmagpie_c200_MRI-ESM2-0-ssp370_lpjml-8e6c5eb1.tgz
-* md5sum: NA
-* Repository: scp://cluster.pik-potsdam.de/p/projects/rd3mod/inputdata/output
+* Used data set: rev4.111_h12_fd712c0b_cellularmagpie_c200_MRI-ESM2-0-ssp370_lpjml-8e6c5eb1.tgz
+* md5sum: b8ca0589d9ef11b7c11e006a32595c22
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
-* Used data set: rev4.109_h12_validation.tgz
-* md5sum: NA
-* Repository: scp://cluster.pik-potsdam.de/p/projects/rd3mod/inputdata/output
+* Used data set: rev4.111_h12_validation.tgz
+* md5sum: 6b4167f9490ad3ad8ae23f51d221b38d
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
-* Used data set: additional_data_rev4.50.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
-
+* Used data set: additional_data_rev4.51.tgz
+* md5sum: 4f0138b5255401eaa6b6ea20b64daab8
+* Repository: /p/projects/rd3mod/mirror/rse.pik-potsdam.de/data/magpie/public
 * 
-* Used data set: calibration_H12_26Mar24.tgz
-* md5sum: NA
-* Repository: https://rse.pik-potsdam.de/data/magpie/public
+* Used data set: calibration_rev1_JustConsv_17Jul24.tgz
+* md5sum: 7108414e2341e83e63d90c3d07288f87
+* Repository: /p/projects/landuse/data/input/calibration
+* 
+* Used data set: jung_consv_y1750.tgz
+* md5sum: e95769e6f14f935de2c0f9402b9e3592
+* Repository: ../patch_inputdata/
 * 
 * Low resolution: c200
 * High resolution: 0.5
@@ -180,11 +183,11 @@ $title magpie
 * 
 * Regionscode: 62eff8f7
 * 
-* Regions data revision: 4.109
+* Regions data revision: 4.111
 * 
 * lpj2magpie settings:
 * * LPJmL data: MRI-ESM2-0:ssp370
-* * Revision: 4.109
+* * Revision: 4.111
 * 
 * aggregation settings:
 * * Input resolution: 0.5
@@ -196,8 +199,7 @@ $title magpie
 * * Call: withCallingHandlers(expr, message = messageHandler, warning = warningHandler,     error = errorHandler)
 * 
 * 
-* Last modification (input data): Tue Jun 18 09:52:31 2024
-
+* Last modification (input data): Tue Sep 24 16:48:23 2024
 * 
 *###################### R SECTION END (VERSION INFO) ###########################
 
@@ -223,7 +225,7 @@ $offlisting
 
 $setglobal c_timesteps  coup2100
 $setglobal c_past  till_2010
-$setglobal c_title  default
+$setglobal c_title  rev2_JustConsv_c200_SSP2-JungGlobalGBF-2020-ExoTC
 
 scalars
 s_use_gdx   use of gdx files                                       / 0 /
@@ -236,7 +238,7 @@ $setglobal drivers  aug17
 $setglobal land  landmatrix_dec18
 $setglobal costs  default
 $setglobal interest_rate  select_apr20
-$setglobal tc  endo_jan22
+$setglobal tc  exo
 $setglobal yields  managementcalib_aug19
 
 $setglobal food  anthro_iso_jun22
@@ -262,7 +264,7 @@ $setglobal natveg  pot_forest_may24
 
 $setglobal employment  exo_may22
 $setglobal labor_prod  off
-$setglobal factor_costs  per_ton_fao_may22
+$setglobal factor_costs  sticky_feb18
 $setglobal landconversion  calib
 
 $setglobal transport  gtap_nov12
