@@ -39,3 +39,7 @@ gamslice.txt
 
 /renv.lock
 .Rproj.user
+
+#ignore large files
+*.pdf
+*.g00
