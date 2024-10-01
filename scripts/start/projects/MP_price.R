@@ -25,7 +25,7 @@ source("scripts/start_functions.R") #nolinter
 source("config/mp_default.cfg") #nolinter
 
 cfg$force_replace <- FALSE
-cfg$qos <- "priority"
+cfg$qos <- "short"
 
 ### Identifier and folder
 ###############################################

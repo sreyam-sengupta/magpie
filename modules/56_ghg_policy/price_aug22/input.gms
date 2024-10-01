@@ -48,7 +48,7 @@ scalars
   s56_offset helper for C price interpolation (1) / 0 /
 ;
 
-$setglobal c56_pollutant_prices  G0000
+$setglobal c56_pollutant_prices  G4000exp2110
 $setglobal c56_pollutant_prices_noselect  G0000
 $setglobal c56_emis_policy  redd+natveg_nosoil
 $setglobal c56_cprice_aff  forestry_vegc
