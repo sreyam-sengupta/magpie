@@ -97,7 +97,7 @@ sets
       SSPDB-SSP5-45-REMIND-MAGPIE,
       SSPDB-SSP5-60-REMIND-MAGPIE,
       SSPDB-SSP5-Ref-REMIND-MAGPIE,
-      MESSAGE_SSP2_historical_BE,
+* Custom scenario labels added manually (not auto-generated) — patch input columns
       SSP2_BD00_BE00_G0000price_rev1,
       SSP2_BD00_BE05_G0000price_rev1,
       SSP2_BD00_BE07_G0000price_rev1,
@@ -105,13 +105,28 @@ sets
       SSP2_BD00_BE15_G0000price_rev1,
       SSP2_BD00_BE25_G0000price_rev1,
       SSP2_BD00_BE45_G0000price_rev1,
+      MESSAGE_SSP2_historical_BE,
       SSP2_BD-high_BE00_G0000price_rev2,
       SSP2_BD-high_BE05_G0000price_rev2,
       SSP2_BD-high_BE07_G0000price_rev2,
       SSP2_BD-high_BE10_G0000price_rev2,
       SSP2_BD-high_BE15_G0000price_rev2,
       SSP2_BD-high_BE25_G0000price_rev2,
-      SSP2_BD-high_BE45_G0000price_rev2 /
+      SSP2_BD-high_BE45_G0000price_rev2,
+      SSP2_Food_BD-none_BE00_G0000price_rev3,
+      SSP2_Food_BD-none_BE05_G0000price_rev3,
+      SSP2_Food_BD-none_BE07_G0000price_rev3,
+      SSP2_Food_BD-none_BE10_G0000price_rev3,
+      SSP2_Food_BD-none_BE15_G0000price_rev3,
+      SSP2_Food_BD-none_BE25_G0000price_rev3,
+      SSP2_Food_BD-none_BE45_G0000price_rev3,
+      SSP2_Water_BD-none_BE00_G0000price_rev3,
+      SSP2_Water_BD-none_BE05_G0000price_rev3,
+      SSP2_Water_BD-none_BE07_G0000price_rev3,
+      SSP2_Water_BD-none_BE10_G0000price_rev3,
+      SSP2_Water_BD-none_BE15_G0000price_rev3,
+      SSP2_Water_BD-none_BE25_G0000price_rev3,
+      SSP2_Water_BD-none_BE45_G0000price_rev3 /
 
 ;
 *######################### R SECTION END (SETS) ################################

@@ -16,7 +16,7 @@ s42_irrig_eff_scenario           Scenario for irrigation efficiency     (1)     
 s42_irrigation_efficiency        Value of irrigation efficiency       (1)        / 0.66 /
 *                                      Only if global static value is requested
 
-s42_env_flow_scenario            EFP scenario.     (1)          / 2 /
+s42_env_flow_scenario            EFP scenario.     (1)          / 0 /
 *                                  0: don't consider environmental flows.
 *                                                                          s42_env_flow_base_fraction and
 *                                                                          s42_env_flow_fraction have no effect.

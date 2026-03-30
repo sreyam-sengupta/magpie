@@ -18,7 +18,7 @@ $setglobal c15_calibscen  constant
 $setglobal c15_rum_share  mixed
 *   options:   constant, halving2050, mixed
 
-$setglobal c15_kcal_scen  healthy_BMI
+$setglobal c15_kcal_scen  endo
 *   options:    healthy_BMI, 2100kcal, 2500kcal,
 *              endo, no_underweight, no_overweight
 *              half_overweight, no_underweight_half_overweight
