@@ -6,6 +6,8 @@ magpie_calib.*
 #ignore input files
 *.cs*
 !/data-changelog.csv
+!/modules/44_biodiversity/bii_spatially_resolved/input/biorealm_biome.cs3
+!/modules/44_biodiversity/bii_spatially_resolved/input/f44_bii_coeff.cs3
 *.mz
 *.rds
 /input/

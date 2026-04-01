@@ -77,8 +77,8 @@ cfg$gms$c56_pollutant_prices_noselect <- "G0000exp2110"
 cfg$gms$s60_2ndgen_bioenergy_dem_min <- 0
 cfg$gms$s60_bioenergy_1st_subsidy <- 0
 
-beV  <- c(0, 5, 7, 10, 15, 25, 45)
-gV   <- c(0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000)
+beV  <- c(0, 45) # 0, 5, 7, 10, 15, 25, 45
+gV   <- c(0, 4000) # 0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000
 blV  <- c("none")
 mpV  <- c(0)
 
