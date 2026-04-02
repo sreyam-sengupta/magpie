@@ -35,11 +35,9 @@ cfg$input <- c(regional    = "rev4.119_5ff27be8_magpie.tgz",
 
 cfg$output <- c("output_check", "rds_report")
 
-### Biodiversity: use spatially resolved BII realization and switch
+### Biodiversity: use spatially resolved BII realization (always reads targets from f44_bii_target.csv)
 ###############################################
 cfg$gms$biodiversity <- "bii_spatially_resolved"
-# c44_use_spatially_resolved_bii_target: 0 = scalar s44_bii_target, 1 = targets from CSV (f44_bii_target by region/biome)
-# Set in loop below: 1 when bl > 0 (use CSV), 0 when bl == 0 (no target / scalar 0)
 ###############################################
 
 ### Identifier and folder
@@ -106,43 +104,30 @@ beV <- c(0, 5, 7, 10, 15, 25, 45) # Options: 0, 5, 7, 10, 15, 25, 45
 ### Tau / Yield
 cfg$gms$tc <- "exo"
 
-### Biodiv: BD-none (no BII target) and BD-high (spatially resolved targets from CSV)
-blV <- c("high") # Options: "none", "high"
+### Biodiv: BD-high only (spatially resolved targets from f44_bii_target.csv)
+### For BD-none (no BII target), use a separate script with the bii_target realization.
 
 ### Food
 mpV <- c(0) # Options: 0, 25, 50, 75
 
+cfg$gms$c44_bii_decrease <- 0
+cfg$gms$c22_protect_scenario <- "none"
 
-for (bl in blV) {
-  bd <- 0
-  pa <- "none"
-  if (bl == "none") {
-    bd <- 1
-    pa <- "none"
-  }
-  # none: scalar target 0, no BII constraint; high: use CSV targets (region/biome)
-  cfg$gms$c44_bii_decrease <- bd
-  cfg$gms$s44_bii_target <- 0   # only used when c44_use_spatially_resolved_bii_target=0 (BD-none)
-  cfg$gms$c44_use_spatially_resolved_bii_target <- if (bl == "high") 1 else 0  # 1 = use CSV, 0 = scalar only
-  cfg$gms$c22_protect_scenario <- pa
+preflag <- "SSP2_BD-high"
+cfg$results_folder <- paste("output", identifierFlag, preflag, ":title:", sep = "/")
+cfg$info$flag2 <- preflag
 
-  for (mp in mpV) {
-    preflag <- paste0("SSP2_BD-", bl)
-    cfg$results_folder <- paste("output", identifierFlag, preflag, ":title:", sep = "/")
-    cfg$info$flag2 <- preflag
+for (mp in mpV) {
+  cfg$gms$s15_rumdairy_scp_substitution <- mp / 100
 
-    cfg$gms$s15_rumdairy_scp_substitution <- mp / 100
+  for (be in beV) {
+    cfg$gms$s60_bioenergy_1st_price <- be
+    cfg$gms$s60_bioenergy_2nd_price <- be
 
-    for (be in beV) {
-      cfg$gms$s60_bioenergy_1st_price <- be
-      cfg$gms$s60_bioenergy_2nd_price <- be
+    runflag <- "price"
+    cfg$title <- paste0(preflag, "_BE", str_pad(be, 2, pad = "0"), "_G0000", runflag, "_rev3")
 
-      ##############################################
-      runflag <- "price"
-      cfg$title <- paste0(preflag, "_BE", str_pad(be, 2, pad = "0"), "_G0000", runflag, "_rev3")
+    start_run(cfg, codeCheck = FALSE)
 
-      start_run(cfg, codeCheck = FALSE)
-
-    } # BE
-  } # MP replacement
-} # BII (BD-none / BD-high)
+  } # BE
+} # MP replacement

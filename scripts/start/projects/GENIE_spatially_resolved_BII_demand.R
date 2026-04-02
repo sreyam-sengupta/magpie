@@ -32,10 +32,9 @@ cfg$input <- c(regional    = "rev4.119_5ff27be8_magpie.tgz",
 
 cfg$output <- c("output_check", "rds_report")
 
-### Biodiversity: use spatially resolved BII realization and switch
+### Biodiversity: use spatially resolved BII realization (always reads targets from f44_bii_target.csv)
 ###############################################
 cfg$gms$biodiversity <- "bii_spatially_resolved"
-# c44_use_spatially_resolved_bii_target: 0 = scalar s44_bii_target, 1 = targets from CSV
 ###############################################
 
 ### Identifier and folder
@@ -74,54 +73,37 @@ beV <- c(0, 5, 7, 10, 15, 25, 45) # BE price incentives to derive demand. Option
 # ### GHG
 gV <- c(0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000) # GHG prices to derive demand. Options: 0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000
 
-# ### Biodiv
-blV <- c("none", "high") # "none" = scalar target (BII off), "high" = targets from CSV
+# ### Biodiv: BD-high only (spatially resolved targets from f44_bii_target.csv)
+### For BD-none (no BII target), use a separate script with the bii_target realization.
 
 # ### Food / demand replacement
 mpV <- c(0) # corresponds to cfg$gms$s15_rumdairy_scp_substitution
 
-# Forest settings (kept from template)
-cfg$gms$s32_max_aff_cell_2025 <- 0.005
+cfg$gms$c44_bii_decrease <- 0
+cfg$gms$c22_protect_scenario <- "none"
 
-for (bl in blV) {
-  bd <- if (bl == "none") 1 else 0
-  pa <- "none"
+preflag <- "SSP2_BD-high"
+cfg$results_folder <- paste("output", identifierFlag, preflag, ":title:", sep = "/")
+cfg$info$flag2 <- preflag
 
-  # none: scalar target 0, no BII constraint; high: use CSV targets (region/biome)
-  cfg$gms$c44_bii_decrease <- bd
-  cfg$gms$s44_bii_target <- 0 # only used when c44_use_spatially_resolved_bii_target = 0
-  cfg$gms$c44_use_spatially_resolved_bii_target <- if (bl == "high") 1 else 0
-  cfg$gms$c22_protect_scenario <- pa
+for (mp in mpV) {
+  cfg$gms$s15_rumdairy_scp_substitution <- mp / 100
 
-  for (mp in mpV) {
-    cfg$gms$s15_rumdairy_scp_substitution <- mp / 100
+  for (be in beV) {
+    be_str <- str_pad(be, 2, pad = "0")
 
-    preflag <- paste0("SSP2_BD-", bl)
+    # Demand input column: extracted from the BD-high price-driven step.
+    cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_BD-high_BE", be_str, "_G0000price_rev2")
 
-    cfg$results_folder <- paste("output", identifierFlag, preflag, ":title:", sep = "/")
-    cfg$info$flag2 <- preflag
+    for (g in gV) {
+      g_str <- str_pad(g, 4, pad = "0")
+      g_formatted <- paste0("G", g_str)
+      cfg$gms$c56_pollutant_prices <- paste0(g_formatted, "exp2110")
 
-    for (be in beV) {
-      be_str <- str_pad(be, 2, pad = "0")
+      cfg$title <- paste0(preflag, "_BE", be_str, "_G", g_str, "demand_rev2")
 
-      # Demand input column: extracted/derived from the price-driven step.
-      # Note: In the current `f60_bioenergy_dem.cs3`, BD-none may still be stored under the legacy `SSP2_BD00` prefix.
-      if (bl == "none") {
-        cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_BD00_BE", be_str, "_G0000price_rev1")
-      } else {
-        cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_BD-high_BE", be_str, "_G0000price_rev2")
-      }
-
-      for (g in gV) {
-        g_str <- str_pad(g, 4, pad = "0")
-        g_formatted <- paste0("G", g_str)
-        cfg$gms$c56_pollutant_prices <- paste0(g_formatted, "exp2110")
-
-        cfg$title <- paste0(preflag, "_BE", be_str, "_G", g_str, "demand_rev2")
-
-        start_run(cfg, codeCheck = FALSE)
-      } # GHG
-    } # BE
-  } # MP replacement
-} # BII (BD-none / BD-high)
+      start_run(cfg, codeCheck = FALSE)
+    } # GHG
+  } # BE
+} # MP replacement
 
