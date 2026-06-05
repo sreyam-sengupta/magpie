@@ -37,15 +37,15 @@ cfg$output <- c("output_check", "rds_report")
 
 ### Identifier and folder
 ###############################################
-identifierFlag <- "Sustainable_CDR_baseline_rev4"
-cfg$title <- "Sustainable_CDR_baseline_rev4"
+identifierFlag <- "Sustainable_CDR_baseline_rev5"
+cfg$title <- "Sustainable_CDR_baseline_rev5"
 ###############################################
 
 # Set the identifier flag for shiny app, and output folder.
 cfg$info$flag <- identifierFlag
 cfg$results_folder <- paste0("output/", identifierFlag, "/:title:")
 
-# Set the SSP scenario in the scenario_config.csv file to SSP1.
+# Set the SSP scenario in the scenario_config.csv file to SSP2.
 cfg <- setScenario(cfg, "SSP2")
 
 ### Whether to use endogenous or exogenous technological change
@@ -57,10 +57,10 @@ cfg$gms$c13_tccost <- "high"
 cfg$gms$c14_yields_scenario  <- "nocc"
 
 # Food settings for baseline scenario:
-cfg$gms$food <- "anthro_iso_jun22"
+# cfg$gms$food <- "anthro_iso_jun22"
 cfg$gms$s15_elastic_demand <- 0.0
 cfg$gms$s15_exo_diet <- 0.0
-cfg$gms$c15_kcal_scen <- "healthy_BMI"
+# cfg$gms$c15_kcal_scen <- "healthy_BMI"
 
 # Additional land conservation target: none
 cfg$gms$c22_protect_scenario <- "none"
@@ -69,8 +69,8 @@ cfg$gms$c22_protect_scenario <- "none"
 cfg$gms$s30_annual_max_growth <- 0.02
 
 # Baseline water settings
-cfg$gms$c42_env_flow_policy <- "on" 
-cfg$gms$s42_env_flow_scenario <- 2 
+cfg$gms$c42_env_flow_policy <- "off" 
+# cfg$gms$s42_env_flow_scenario <- 2 
 
 ### Biodiversity module: baseline run, so use "bii_target" module
 cfg$gms$biodiversity <- "bii_target"

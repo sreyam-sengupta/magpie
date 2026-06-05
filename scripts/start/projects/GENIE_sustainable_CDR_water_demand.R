@@ -35,8 +35,8 @@ cfg$output <- c("output_check", "rds_report")
 
 ### Identifier and folder
 ###############################################
-identifierFlag <- "Sustainable_CDR_baseline_rev5"
-cfg$title <- "Sustainable_CDR_baseline_rev5"
+identifierFlag <- "Sustainable_CDR_water_rev5"
+cfg$title <- "Sustainable_CDR_water_rev5"
 ###############################################
 
 cfg$info$flag <- identifierFlag
@@ -46,7 +46,7 @@ cfg$results_folder <- paste0("output/", identifierFlag, "/:title:")
 cfg <- setScenario(cfg, "SSP2")
 
 # Demand-driven step (GENIE step 3): endogenous tau — do not set cfg$gms$tc to "exo"
-# (exo is for price-driven runs only; see GENIE_sustainable_CDR_baseline_price.R)
+# (exo is for price-driven runs only; see GENIE_sustainable_CDR_water_price.R)
 cfg$gms$c13_tccost <- "high"
 
 # Yields scenario should not reflect climate change
@@ -64,9 +64,9 @@ cfg$gms$c22_protect_scenario <- "none"
 # Capping the annual max cropland growth per year per region, relative to current level
 cfg$gms$s30_annual_max_growth <- 0.02
 
-# Baseline water settings
-cfg$gms$c42_env_flow_policy <- "off"
-# cfg$gms$s42_env_flow_scenario <- 2
+# Water settings for sustainable CDR water use scenario:
+cfg$gms$c42_env_flow_policy <- "on"
+cfg$gms$s42_env_flow_scenario <- 2
 
 ### Biodiversity module: baseline run, so use "bii_target" module
 cfg$gms$biodiversity <- "bii_target"
@@ -104,7 +104,7 @@ for (mp in mpV) {
     be_str <- str_pad(be, 2, pad = "0")
 
     # f60 column from rev5 price-driven readout (SSP2_old.tgz)
-    cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_baseline_BD00_BE", be_str, "_G0000_price_rev5")
+    cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_water_BD00_BE", be_str, "_G0000_price_rev5")
 
     for (g in gV) {
       g_str <- str_pad(g, 4, pad = "0")
