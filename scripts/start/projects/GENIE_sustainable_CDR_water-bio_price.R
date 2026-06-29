@@ -37,8 +37,8 @@ cfg$output <- c("output_check", "rds_report")
 
 ### Identifier and folder
 ###############################################
-identifierFlag <- "Sustainable_CDR_water-bio_rev5"
-cfg$title <- "Sustainable_CDR_water-bio_rev5"
+identifierFlag <- "Sustainable_CDR_water-bio_rev6"
+cfg$title <- "Sustainable_CDR_water-bio_rev6"
 ###############################################
 
 # Set the identifier flag for shiny app, and output folder.
@@ -77,7 +77,7 @@ cfg$gms$biodiversity <- "bii_target"
 ### Cost of missing BII set to 10 million USD rather than 1 million as in default.cfg
 cfg$gms$s44_cost_bii_missing <- 10000000
 ### Biodiv: BD78 only — global BII target = 0.78
-cfg$gms$c44_bii_decrease <- 1
+cfg$gms$c44_bii_decrease <- 0
 cfg$gms$s44_bii_target <- 0.78
 
 # No GHG price
@@ -87,7 +87,8 @@ cfg$gms$c56_pollutant_prices_noselect <- "G0000exp2110" # def = R34M410-SSP2-NPi
 # ### BE
 cfg$gms$s60_2ndgen_bioenergy_dem_min <- 0
 cfg$gms$s60_bioenergy_1st_subsidy <- 0
-beV <- c(0, 5, 7, 10, 15, 25, 45) # Options: 0, 5, 7, 10, 15, 25, 45
+be_labelV <- c(0, 5, 7, 10, 15, 25, 45) # US$2005/GJ labels for run names
+inflation_2005_to_2017 <- 1.23
 
 ### Food
 mpV <- c(0) # Options: 0, 25, 50, 75
@@ -99,12 +100,13 @@ cfg$info$flag2 <- preflag
 for (mp in mpV) {
   cfg$gms$s15_rumdairy_scp_substitution <- mp / 100
 
-  for (be in beV) {
-    cfg$gms$s60_bioenergy_1st_price <- be
-    cfg$gms$s60_bioenergy_2nd_price <- be
+  for (be_label in be_labelV) {
+    be_price <- be_label * inflation_2005_to_2017
+    cfg$gms$s60_bioenergy_1st_price <- be_price
+    cfg$gms$s60_bioenergy_2nd_price <- be_price
 
     runflag <- "price"
-    cfg$title <- paste0(preflag, "_BE", str_pad(be, 2, pad = "0"), "_G0000_", runflag)
+    cfg$title <- paste0(preflag, "_BE", str_pad(be_label, 2, pad = "0"), "_G0000_", runflag)
 
     start_run(cfg, codeCheck = FALSE)
 

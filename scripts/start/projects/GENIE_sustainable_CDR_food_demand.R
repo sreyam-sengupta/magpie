@@ -35,8 +35,8 @@ cfg$output <- c("output_check", "rds_report")
 
 ### Identifier and folder
 ###############################################
-identifierFlag <- "Sustainable_CDR_food_rev5"
-cfg$title <- "Sustainable_CDR_food_rev5"
+identifierFlag <- "Sustainable_CDR_food_rev6"
+cfg$title <- "Sustainable_CDR_food_rev6"
 ###############################################
 
 cfg$info$flag <- identifierFlag
@@ -85,10 +85,11 @@ cfg$gms$c56_pollutant_prices_noselect <- "G0000exp2110" # def = R34M410-SSP2-NPi
 cfg$gms$s60_2ndgen_bioenergy_dem_min <- 0
 cfg$gms$s60_bioenergy_1st_subsidy <- 0.00000001
 
-beV <- c(5, 7, 10, 15, 25, 45) # Options: 0, 5, 7, 10, 15, 25, 45
+beV <- c(0, 5, 7, 10, 15, 25, 45) # Options: 0, 5, 7, 10, 15, 25, 45
 
-### GHG
-gV  <- c(0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000)
+### GHG — US$2005 labels for run names; inflate CO2 via s56_cprice_red_factor
+g_labelV <- c(0, 10, 20, 50, 100, 200, 400, 600, 1000, 2000, 3000, 4000)
+inflation_2005_to_2017 <- 1.23
 
 ### Food
 mpV <- c(0) # Options: 0, 25, 50, 75
@@ -103,13 +104,14 @@ for (mp in mpV) {
   for (be in beV) {
     be_str <- str_pad(be, 2, pad = "0")
 
-    # f60 column from rev5 price-driven readout (SSP2_old.tgz)
-    cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_food_BD00_BE", be_str, "_G0000_price_rev5")
+    # f60 column from rev6 price-driven readout (SSP2_old.tgz)
+    cfg$gms$c60_2ndgen_biodem <- paste0("SSP2_food_BD00_BE", be_str, "_G0000_price_rev6")
 
-    for (g in gV) {
-      g_str <- str_pad(g, 4, pad = "0")
+    for (g_label in g_labelV) {
+      g_str <- str_pad(g_label, 4, pad = "0")
       cfg$gms$c56_pollutant_prices <- paste0("G", g_str, "exp2110")
       cfg$gms$c56_pollutant_prices_noselect <- paste0("G", g_str, "exp2110")
+      cfg$gms$s56_cprice_red_factor <- if (g_label == 0) 1 else inflation_2005_to_2017
 
       cfg$title <- paste0(preflag, "_BE", be_str, "_G", g_str, "_demand")
 
